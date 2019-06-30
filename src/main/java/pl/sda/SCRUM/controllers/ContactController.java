@@ -69,7 +69,7 @@ public class ContactController {
     }
 
     @DeleteMapping("/deleteContact")
-    public ModelAndView deleteContact2(@RequestParam("id") Integer id){
+    public ModelAndView deleteContact2(@RequestParam(value = "id") Integer id){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("deleteContact");
 //           modelAndView.addObject("contactDelete", contactService.findById(id));
@@ -77,8 +77,8 @@ public class ContactController {
         return modelAndView;
     }
 
-    @GetMapping("/del")
-    public ModelAndView getContactDelete(@RequestParam("id") int id){
+    @GetMapping("/delete")
+    public ModelAndView getContactDelete(@RequestParam(value = "id") Integer id){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("delete");
         return modelAndView;

@@ -28,7 +28,7 @@
 
           <h2>Contacts</h2>
 
-          <button id="addContact"><a href="addContact.html">add</a></button>
+          <button>add</button>
           <button>delete</button>
           <button>update</button>
           <div class="table-responsive">
@@ -39,6 +39,9 @@
                   <th>id</th>
                   <th>First name</th>
                   <th>Last name</th>
+                  <th>Phone</th>
+                  <th>delete</th>
+                  <th>edit</th>
                 </tr>
               </thead>
 
@@ -50,6 +53,8 @@
                   <td th:text="${cont.firstName}"></td>
                   <td th:text="${cont.lastName}"></td>
                   <td th:text="${cont.phone}"></td>
+                  <td><a th:href="@{'http://localhost:8080/delete?id=' + ${cont.id}}">delete</a></td>
+                  <td><a th:href="@{'http://localhost:8080/edit?id=' + ${cont.id}}">edit</a></td>
                 </tr>
 
               </tbody>

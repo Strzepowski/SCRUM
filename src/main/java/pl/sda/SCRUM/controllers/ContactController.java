@@ -71,17 +71,18 @@ public class ContactController {
 
 
 
-    /*@PostMapping("/contact/add")
+    @PostMapping("/contact/add")
     ModelAndView contactAdd(@RequestBody Contact contact){
         Contact newContact = contactService.addContact(contact);
         return new ModelAndView("index", "newContact", newContact);
-    }*/
+    }
 
 
-    @GetMapping("/addContact")
-    @ResponseBody
+    
+
+    @RequestMapping(value = "/{addContact}", method = RequestMethod.GET)
     String addContact(){
-           return "addContact";
+        return "addContact";
     }
 
 }

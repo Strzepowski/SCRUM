@@ -34,7 +34,10 @@ public class ContactService {
         contactRepository.deleteById(id);
     }
 
+    public Optional<Contact> getConcatById(int id) {
 
+        return contactRepository.findById(id);
+    }
 
 }
 

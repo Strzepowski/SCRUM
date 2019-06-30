@@ -99,6 +99,20 @@ public class ContactController {
         return "addContact";
     }
 
+    @GetMapping("/contact")
+    ModelAndView concatById(@RequestParam("id") int id){
+
+
+        Optional<Contact> concatById = contactService.getConcatById(id);
+        System.out.println(concatById.get());
+
+        if(concatById.isPresent()){
+            return new ModelAndView("edit", "concat", concatById.get());
+        }
+        return getContacts();
+
+    }
+
 }
 
 

@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class ContactService {
 
-    ContactRepository contactRepository;
+    private final ContactRepository contactRepository;
 
     @Autowired
     public ContactService(ContactRepository contactRepository) {
@@ -34,7 +34,10 @@ public class ContactService {
         contactRepository.deleteById(id);
     }
 
+    public Optional<Contact> getConcatById(int id) {
 
+        return contactRepository.findById(id);
+    }
 
 }
 

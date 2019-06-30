@@ -68,6 +68,22 @@ public class ContactController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    @DeleteMapping("/deleteContact")
+    public ModelAndView deleteContact2(@RequestParam(value = "id") Integer id){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("deleteContact");
+//           modelAndView.addObject("contactDelete", contactService.findById(id));
+        contactService.deleteById(id);
+        return modelAndView;
+    }
+
+    @GetMapping("/delete")
+    public ModelAndView getContactDelete(@RequestParam(value = "id") Integer id){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("delete");
+        modelAndView.addObject("contact", contactService.findById(id));
+        return modelAndView;
+    }
 
 
     @PostMapping("/contact/add")
@@ -86,6 +102,19 @@ public class ContactController {
     @RequestMapping(value = "/{addContact}", method = RequestMethod.GET)
     String addContact(){
         return "addContact";
+    }
+
+    @GetMapping("/contact")
+    ModelAndView concatById(@RequestParam("id") int id){
+
+
+        Optional<Contact> concatById = contactService.getConcatById(id);
+
+        if(concatById.isPresent()){
+            return new ModelAndView("edit", "contact", concatById.get());
+        }
+        return getContacts();
+
     }
 
 }

@@ -89,10 +89,9 @@ public class ContactController {
 
 
         Optional<Contact> concatById = contactService.getConcatById(id);
-        System.out.println(concatById.get());
 
         if(concatById.isPresent()){
-            return new ModelAndView("edit", "concat", concatById.get());
+            return new ModelAndView("edit", "contact", concatById.get());
         }
         return getContacts();
 

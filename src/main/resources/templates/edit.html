@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <h1>Scrum app</h1>
+
+            <h2>Contacts</h2>
+
+            <button>Save</button>
+            <button>Cancel</button>
+
+            <div class="table-responsive">
+                <form action="#" th:action="@{/edit}" method="put">
+                    <input type="text" id="firstName" name="firstName" th:value="${contact.getFirstName()}"/>
+                    <input type="text" id="lastName" name="lastName" th:value="${contact.getLastName()}"/>
+                    <input type="text" id="phone" name="phone" th:value="${contact.getPhone()}"/>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

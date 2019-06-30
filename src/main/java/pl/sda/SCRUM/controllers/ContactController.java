@@ -81,6 +81,7 @@ public class ContactController {
     public ModelAndView getContactDelete(@RequestParam(value = "id") Integer id){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("delete");
+        modelAndView.addObject("contact", contactService.findById(id));
         return modelAndView;
     }
 

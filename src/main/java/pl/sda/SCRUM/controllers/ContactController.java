@@ -68,6 +68,21 @@ public class ContactController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    @DeleteMapping("/deleteContact")
+    public ModelAndView deleteContact2(@RequestParam("id") Integer id){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("deleteContact");
+//           modelAndView.addObject("contactDelete", contactService.findById(id));
+        contactService.deleteById(id);
+        return modelAndView;
+    }
+
+    @GetMapping("/del")
+    public ModelAndView getContactDelete(@RequestParam("id") int id){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("delete");
+        return modelAndView;
+    }
 
 
     @PostMapping("/contact/add")

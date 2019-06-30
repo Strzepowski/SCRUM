@@ -1,4 +1,4 @@
-package pl.sda.ScrumAPP.model;
+package pl.sda.SCRUM.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

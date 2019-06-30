@@ -1,4 +1,4 @@
-package pl.sda.ScrumAPP.controllers;
+package pl.sda.SCRUM.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,8 +46,7 @@ public class ContactController {
             contact1.setFirstName(contact.getFirstName());
             contact1.setLastName(contact.getLastName());
             contact1.setPhone(contact.getPhone());
-            contactRepository.save(contact1);
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(contactRepository.save(contact1));
         }
     }
 

@@ -1,9 +1,9 @@
-package pl.sda.ScrumAPP.service;
+package pl.sda.SCRUM.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.sda.ScrumAPP.model.Contact;
-import pl.sda.ScrumAPP.repository.ContactRepository;
+import pl.sda.SCRUM.model.Contact;
+import pl.sda.SCRUM.repository.ContactRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package pl.sda.ScrumAPP.config;
+package pl.sda.SCRUM.config;
 
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;

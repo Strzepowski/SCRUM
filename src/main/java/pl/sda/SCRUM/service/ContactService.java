@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class ContactService {
 
-    ContactRepository contactRepository;
+    private final ContactRepository contactRepository;
 
     @Autowired
     public ContactService(ContactRepository contactRepository) {

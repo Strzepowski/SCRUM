@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add contact</title>
+</head>
+<body>
+<h1>add contact formularz</h1>
+
+<form th:action="@{/addContact}" method="post">
+    first name <input type="text"><br><br>
+    last name <input type="text"><br><br>
+    phone number <input type="text"><br><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>

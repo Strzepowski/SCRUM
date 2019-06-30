@@ -76,6 +76,10 @@ public class ContactController {
         return new ModelAndView("index", "newContact", newContact);
     }
 
+    @PostMapping("/add")
+    public String greetingSubmit(@ModelAttribute Contact contact) {
+        return "result";
+    }
 
     
 

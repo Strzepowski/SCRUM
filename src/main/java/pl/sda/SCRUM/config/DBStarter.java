@@ -1,4 +1,4 @@
-package pl.sda.ScrumAPP.config;
+package pl.sda.SCRUM.config;
 
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import pl.sda.ScrumAPP.model.Contact;
-import pl.sda.ScrumAPP.repository.ContactRepository;
+import pl.sda.SCRUM.model.Contact;
+import pl.sda.SCRUM.repository.ContactRepository;
 
 @Component
 public class DBStarter implements ApplicationRunner {

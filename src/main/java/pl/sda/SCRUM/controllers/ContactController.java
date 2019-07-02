@@ -90,56 +90,16 @@ public class ContactController {
         return modelAndView;
     }
 
-
-    /*@PostMapping("/add")
-    ModelAndView contactAdd(@ModelAttribute Contact contact){
-        Contact newContact = contactService.addContact(contact);
-        return new ModelAndView("index", "index", newContact);
-    }*/
-
     @PostMapping("/addContact")
     public String greetingSubmit(@ModelAttribute Contact contact) {
-        return "result";
-    }
-
-    //to napewno dziala
-    /*@PostMapping("/add")
-    @ResponseBody
-    @ResponseStatus(HttpStatus.CREATED)
-    ModelAndView contactAdd(@ModelAttribute Contact contact){
         Contact newContact = contactService.addContact(contact);
-        return new ModelAndView("index", "contact", newContact);
-    }*/
-
-    //to napewno dziala i cos wswietla ale nie dodaje do bazy
-    /*@PostMapping("/add")
-    @ResponseBody
-    @ResponseStatus(HttpStatus.CREATED)
-    public String formSubmit(@ModelAttribute Contact contact) {
-        return "result";
-    }*/
-    
-    //to napewno dziala
-//    @RequestMapping(value = "/{addContact}", method = RequestMethod.GET)
-//    String addContact(){
-//        return "addContact";
-//    }
-
-    @GetMapping("/addContact")
-    String formularz(){
-        return "addContact";
-    }
-
-    /*@PostMapping("/addContact")
-    public String addSubmit(@ModelAttribute Contact contact) {
         return "result";
     }
 
     @GetMapping("/addContact")
-    public String addContactForm(Model model) {
-        model.addAttribute(new Contact());
+    String formularz(@ModelAttribute Contact contact){
         return "addContact";
-    }*/
+    }
 
     @GetMapping("/contact")
     ModelAndView concatById(@RequestParam("id") int id){

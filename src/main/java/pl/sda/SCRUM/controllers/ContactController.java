@@ -91,13 +91,13 @@ public class ContactController {
     }
 
     @PostMapping("/addContact")
-    public String greetingSubmit(@ModelAttribute Contact contact) {
+    public String assContactSubmit(@ModelAttribute Contact contact) {
         Contact newContact = contactService.addContact(contact);
         return "result";
     }
 
     @GetMapping("/addContact")
-    String formularz(@ModelAttribute Contact contact){
+    String addContactGet(@ModelAttribute Contact contact){
         return "addContact";
     }
 

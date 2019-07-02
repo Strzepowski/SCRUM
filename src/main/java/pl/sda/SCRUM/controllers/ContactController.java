@@ -91,7 +91,7 @@ public class ContactController {
     }
 
     @PostMapping("/addContact")
-    public String assContactSubmit(@ModelAttribute Contact contact) {
+    public String addContactSubmit(@ModelAttribute Contact contact) {
         Contact newContact = contactService.addContact(contact);
         return "result";
     }

@@ -7,16 +7,6 @@
 </head>
 <body>
 <h1>add contact formularz</h1>
-<!--th:object="${contact}"-->
-<!--th:field="firstName"-->
-<!--th:field="lastName"-->
-<!--th:field="phone"-->
-<!--<form th:action="@{/add}" th:object="${contact}" method="post">
-    first name <input type="text" id="firstName"><br><br>
-    last name <input type="text" id="lastName"><br><br>
-    phone number <input type="text" id="phone"><br><br>
-    <input type="submit">
-</form>-->
 
 <form action="#" th:action="@{/addContact}" th:object="${contact}" method="post">
     <p>firstName: <input type="text" th:field="${contact.firstName}" /></p>

@@ -26,7 +26,7 @@ public class DBStarter implements ApplicationRunner {
         Fairy fairy = Fairy.create();
 
 
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 10; i++){
             Person person = fairy.person();
             Contact contact = new Contact();
             contact.setFirstName(person.getFirstName());

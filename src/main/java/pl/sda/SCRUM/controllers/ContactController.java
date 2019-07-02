@@ -1,11 +1,14 @@
 package pl.sda.SCRUM.controllers;
 
 
+import io.micrometer.core.lang.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -18,11 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import pl.sda.SCRUM.service.ContactService;
 
+import java.util.Map;
 import java.util.Optional;
 
 
 @RequestMapping
 @Controller
+@ComponentScan("pl.sda.SCRUM")
 public class ContactController {
 
     private final ContactRepository contactRepository;
@@ -86,35 +91,53 @@ public class ContactController {
     }
 
 
-    @PostMapping("/contact/add")
-    ModelAndView contactAdd(@RequestBody Contact contact){
-        Contact newContact = contactService.addContact(contact);
-        return new ModelAndView("index", "newContact", newContact);
-    }
-
     @PostMapping("/add")
-    public String greetingSubmit(@ModelAttribute Contact contact) {
-        return "result";
+    ModelAndView contactAdd(@ModelAttribute Contact contact){
+        Contact newContact = contactService.addContact(contact);
+        return new ModelAndView("index", "index", newContact);
     }
 
-    
+    //to napewno dziala
+    /*@PostMapping("/add")
+    @ResponseBody
+    @ResponseStatus(HttpStatus.CREATED)
+    ModelAndView contactAdd(@ModelAttribute Contact contact){
+        Contact newContact = contactService.addContact(contact);
+        return new ModelAndView("index", "contact", newContact);
+    }*/
 
+    //to napewno dziala i cos wswietla ale nie dodaje do bazy
+    /*@PostMapping("/add")
+    @ResponseBody
+    @ResponseStatus(HttpStatus.CREATED)
+    public String formSubmit(@ModelAttribute Contact contact) {
+        return "result";
+    }*/
+    
+    //to napewno dziala
     @RequestMapping(value = "/{addContact}", method = RequestMethod.GET)
     String addContact(){
         return "addContact";
     }
 
+    /*@PostMapping("/addContact")
+    public String addSubmit(@ModelAttribute Contact contact) {
+        return "result";
+    }
+
+    @GetMapping("/addContact")
+    public String addContactForm(Model model) {
+        model.addAttribute(new Contact());
+        return "addContact";
+    }*/
+
     @GetMapping("/contact")
     ModelAndView concatById(@RequestParam("id") int id){
-
-
         Optional<Contact> concatById = contactService.getConcatById(id);
-
         if(concatById.isPresent()){
             return new ModelAndView("edit", "contact", concatById.get());
         }
         return getContacts();
-
     }
 
 }

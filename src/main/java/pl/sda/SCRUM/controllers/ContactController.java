@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Optional;
 
 
-@RequestMapping
+//@RequestMapping
 @Controller
 @ComponentScan("pl.sda.SCRUM")
 public class ContactController {
@@ -91,10 +91,15 @@ public class ContactController {
     }
 
 
-    @PostMapping("/add")
+    /*@PostMapping("/add")
     ModelAndView contactAdd(@ModelAttribute Contact contact){
         Contact newContact = contactService.addContact(contact);
         return new ModelAndView("index", "index", newContact);
+    }*/
+
+    @PostMapping("/addContact")
+    public String greetingSubmit(@ModelAttribute Contact contact) {
+        return "result";
     }
 
     //to napewno dziala
@@ -115,8 +120,13 @@ public class ContactController {
     }*/
     
     //to napewno dziala
-    @RequestMapping(value = "/{addContact}", method = RequestMethod.GET)
-    String addContact(){
+//    @RequestMapping(value = "/{addContact}", method = RequestMethod.GET)
+//    String addContact(){
+//        return "addContact";
+//    }
+
+    @GetMapping("/addContact")
+    String formularz(){
         return "addContact";
     }
 

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Entity
 @Data
 @EqualsAndHashCode(of = "id")
-@Component
+//@Component
 
 public class Contact {
 
